@@ -59,9 +59,9 @@ export async function GET(
       total_users: totalUsers,
       total_orders: await analysisDal.countTotalOrders(),
       plan_status: {
-        free: totalUsers - planStatus.pro - planStatus.premium,
-        pro: planStatus.pro,
-        premium: planStatus.premium,
+        free: totalUsers - (planStatus.pro ?? 0) - (planStatus.premium ?? 0),
+        pro: planStatus.pro ?? 0,
+        premium: planStatus.premium ?? 0,
       },
     },
   });
