@@ -21,6 +21,7 @@ import styles from "@/styles/module/home.module.scss";
 
 import Locale from "@/locales";
 
+const subtitleText = process.env.NEXT_PUBLIC_SUBTITLE;
 const wechatOA = process.env.NEXT_PUBLIC_WECHAT_OA;
 
 /**
@@ -80,12 +81,13 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
       >
         <div className={styles["sidebar-header"]}>
           <div className={styles["sidebar-title"]}>{Locale.Index.Title}</div>
-          {wechatOA && (
+          {subtitleText && (
             <div className={styles["sidebar-sub-title"]}>
-              {Locale.Index.SubTitle}{" "}
-              <span className={styles["sidebar-ad"]}>{wechatOA}</span>
+              {Locale.Index.SubTitle}
+              {wechatOA && (<span className={styles["sidebar-ad"]}>{wechatOA}</span>)}
             </div>
           )}
+          
           <div className={styles["sidebar-logo"]}>
             <ChatGptIcon />
           </div>

@@ -1,11 +1,12 @@
 import type { LocaleType } from "./index";
 
 const title = process.env.NEXT_PUBLIC_TITLE;
+const subtitle = process.env.NEXT_PUBLIC_SUBTITLE;
 
 const en: LocaleType = {
   Index: {
-    Title: title || "ChatGPT Admin",
-    SubTitle: "Follow WeChat OA:",
+    Title: title,
+    SubTitle: subtitle,
     Submit: "Submit",
     Login: "Login",
     Register: "Registration",
